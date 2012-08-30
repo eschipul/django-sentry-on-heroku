@@ -9,6 +9,7 @@ database_url = os.environ.get('DATABASE_URL',
                               'postgres://sentry:sentry@localhost/sentry')
 db = urlparse(database_url)
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -29,7 +30,7 @@ SENTRY_PUBLIC = False
 SENTRY_KEY = os.environ.get('SENTRY_KEY')
 
 if 'MAIL_TO' in os.environ:
-    ADMINS = [('J. Doe', os.environ['MAIL_TO'])]
+    ADMINS = [('Your Name Here', os.environ['MAIL_TO'])]
     SENTRY_ADMINS = [os.environ['MAIL_TO']]
 
 SERVER_EMAIL = os.environ.get('SENDGRID_USERNAME')
